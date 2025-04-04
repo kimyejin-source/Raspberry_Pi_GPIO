@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+LEDS=(14 15 18)
+
+for PIN in "${LEDS[@]}"; do
+	pinctrl set $PIN op
+	pinctrl set $PIN dl
+done
+
+while true; do
+    for count in {0..7}; do
+        for i in {0..2}; do
+            # i = 0 ➜ 4의 자리 (count/4)%2
+            # i = 1 ➜ 2의 자리 (count/2)%2
+            # i = 2 ➜ 1의 자리 (count/1)%2
+            if (( (count / (2 ** (2 - i))) % 2 )); then
+                pinctrl set ${LEDS[i]} dh
+            else
+                pinctrl set ${LEDS[i]} dl
+            fi
+        done
+        sleep 1
+    done
+done

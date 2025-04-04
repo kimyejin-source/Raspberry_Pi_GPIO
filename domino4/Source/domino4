@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+LEDS=(14 15 18 23)
+
+for PIN in "${LEDS[@]}"; do
+	pinctrl set $PIN op
+	pinctrl set $PIN dl
+done
+
+while true; do
+	for PIN in "${LEDS[@]}"; do
+		pinctrl set $PIN dh
+		sleep 1
+		pinctrl set $PIN dl
+	done
+done
