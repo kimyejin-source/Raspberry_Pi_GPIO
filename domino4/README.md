@@ -8,21 +8,23 @@
 ## 💡 domino4 스크립트 설명
 
 ```bash
-#!/usr/bin/bash
+#!/usr/bin/bash  # Bash 셸에서 실행되는 스크립트임을 명시
 
-LEDS=(14 15 18 23)
+LEDS=(14 15 18 23)  # 제어할 LED 핀 번호들을 배열로 저장
 
+# 모든 핀을 출력 모드(op)로 설정하고, 초기값을 low(dl)로 설정
 for PIN in "${LEDS[@]}"; do
-    pinctrl set $PIN op
-    pinctrl set $PIN dl
+	pinctrl set $PIN op  # 핀을 출력 모드로 설정
+	pinctrl set $PIN dl  # 핀의 출력값을 low(0)로 설정하여 LED를 끔
 done
 
+# 무한 반복 루프
 while true; do
-    for PIN in "${LEDS[@]}"; do
-        pinctrl set $PIN dh
-        sleep 1
-        pinctrl set $PIN dl
-    done
+	for PIN in "${LEDS[@]}"; do
+		pinctrl set $PIN dh  # 해당 핀의 출력을 high(1)로 설정 → LED 켜짐
+		sleep 1              # 1초 대기
+		pinctrl set $PIN dl  # 해당 핀의 출력을 다시 low(0)로 설정 → LED 꺼짐
+	done
 done
 ```
 🔍 코드 흐름 요약
