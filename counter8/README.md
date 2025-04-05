@@ -51,18 +51,18 @@ done
 ## 🔌 회로 구성 설명
 - 공통 GND: 브레드보드의 - 라인에 Raspberry Pi의 GND 연결
 - LED 연결 순서:
-  1. Raspberry Pi GPIO ➝ 점퍼선 ➝ 저항 (330Ω~1kΩ 권장)
+  1. Raspberry Pi GPIO ➝ 점퍼선 ➝ 저항 
   2. 저항 ➝ LED의 긴 다리 (애노드, +)
   3. LED의 짧은 다리 (캐소드, -) ➝ 브레드보드의 GND(-) 라인
 
 ---
 ## 🔄 Raspberry Pi와의 통신 구조
-pinctrl 명령어: GPIO 핀을 설정하고 제어하는 CLI 도구
+1. Bash 스크립트는 GPIO 설정 및 제어 명령을 실행합니다.
+2. pinctrl 명령어를 사용하여 GPIO 핀을 직접 제어합니다.
+3. WSL 또는 SSH 환경에서 스크립트를 실행할 수 있으며, .sh 파일에 실행 권한을 부여한 후 실행합니다
 - op: Output 모드 설정
 - dh: Digital High (3.3V)
 - dl: Digital Low (0V)
-  
-스크립트 실행 환경: Raspberry Pi의 bash 쉘 
 
 실행 방법
 ```bash
