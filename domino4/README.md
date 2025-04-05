@@ -43,8 +43,10 @@ done
 
 ---
 ## 🔌 회로 구성 설명
-- 공통 GND: 브레드보드의 - 라인에 Raspberry Pi의 GND 연결
-- LED 연결 순서:
+![회로 사진](../figure/회로.jpg)
+
+- 브레드보드의 - 라인에 Raspberry Pi의 GND 연결
+- LED 연결 순서
   1. Raspberry Pi GPIO ➝ 점퍼선 ➝ 저항 
   2. 저항 ➝ LED의 긴 다리 (애노드, +)
   3. LED의 짧은 다리 (캐소드, -) ➝ 브레드보드의 GND(-) 라인
