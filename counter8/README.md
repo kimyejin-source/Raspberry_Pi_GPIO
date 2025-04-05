@@ -47,6 +47,7 @@ done
 | 하양     | GPIO 18        |
 | 초록     | GPIO 23        |
 
+#### 3bit counter로, 초록LED는 사용하지 않았습니다.
 ---
 ## 🔌 회로 구성 설명
 - 공통 GND: 브레드보드의 - 라인에 Raspberry Pi의 GND 연결
