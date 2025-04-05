@@ -1,4 +1,4 @@
-# Raspberry Pi GPIO: Binary Counter with LED
+# Binary Counter with LED
 
 ## 📝 프로젝트 개요
 
