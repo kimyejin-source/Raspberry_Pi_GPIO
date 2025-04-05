@@ -75,3 +75,7 @@ chmod +x domino4.sh
 사용 언어: Bash
 
 실행 조건: pinctrl 명령어가 /usr/bin/pinctrl에 설치되어 있어야 함
+
+---
+## 시연 영상
+(유튜브링크붙이기)
