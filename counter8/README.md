@@ -78,3 +78,7 @@ chmod +x counter8
 사용 언어: Bash
 
 실행 조건: pinctrl 명령어가 /usr/bin/pinctrl에 설치되어 있어야 함
+
+---
+## 시연 영상
+https://youtu.be/Fx3C_HWcf-U
