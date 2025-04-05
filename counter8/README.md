@@ -9,31 +9,30 @@
 ## 💡 counter8 스크립트 설명
 
 ```bash
-#!/usr/bin/bash
+#!/usr/bin/bash  # Bash 셸에서 실행되는 스크립트임을 명시
 
-LEDS=(14 15 18)
+LEDS=(14 15 18) # 제어할 LED 핀 번호들을 배열로 저장
 
-# 초기 설정: 각 GPIO를 출력 모드(op)로 설정하고 초기 상태를 low(dl)로 설정
+# 모든 핀을 출력 모드(op)로 설정하고, 초기값을 low(dl)로 설정
 for PIN in "${LEDS[@]}"; do
-    pinctrl set $PIN op
-    pinctrl set $PIN dl
+	pinctrl set $PIN op # 핀을 출력 모드로 설정
+	pinctrl set $PIN dl # 핀의 출력값을 low(0)로 설정하여 LED를 끔
 done
 
-# 무한 루프를 통해 0~7까지 이진 카운팅
+# 무한 반복 루프
 while true; do
-    for count in {0..7}; do
+    for count in {0..7};  # count를 0부터 7까지 반복 (3비트로 표현 가능한 범위)
         for i in {0..2}; do
-            # count 값을 이진수로 나누어 각 비트에 해당하는 LED를 점등
             # i = 0 ➜ 4의 자리 (count/4)%2
             # i = 1 ➜ 2의 자리 (count/2)%2
             # i = 2 ➜ 1의 자리 (count/1)%2
-            if (( (count / (2 ** (2 - i))) % 2 )); then
-                pinctrl set ${LEDS[i]} dh
+            if (( (count / (2 ** (2 - i))) % 2 )); then 
+                pinctrl set ${LEDS[i]} dh # 해당 자리수가 1이면 해당 핀을 high(1)로 설정 → LED 켬
             else
-                pinctrl set ${LEDS[i]} dl
+                pinctrl set ${LEDS[i]} dl  # 해당 자리수가 0이면 해당 핀을 low(0)로 설정 → LED 끔
             fi
         done
-        sleep 1
+        sleep 1 # 1초 대기 후 다음 숫자로 진행
     done
 done
 ```
