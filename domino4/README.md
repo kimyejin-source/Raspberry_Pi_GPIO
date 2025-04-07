@@ -78,4 +78,4 @@ chmod +x domino4.sh
 
 ---
 ## 시연 영상
-(유튜브링크붙이기)
+https://youtu.be/O2CtCzZ7dyE
