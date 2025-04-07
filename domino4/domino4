@@ -8,6 +8,8 @@ for PIN in "${LEDS[@]}"; do
 	pinctrl set $PIN dl  # 핀의 출력값을 low(0)로 설정하여 LED를 끔
 done
 
+sleep 1  # 초기화 후 1초 대기
+
 # 무한 반복 루프
 while true; do
 	for PIN in "${LEDS[@]}"; do
