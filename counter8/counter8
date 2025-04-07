@@ -1,4 +1,4 @@
-#!/usr/bin/bash  # Bash 셸에서 실행되는 스크립트임을 명시
+#!/usr/bin/bash  
 
 LEDS=(14 15 18) # 제어할 LED 핀 번호들을 배열로 저장
 
