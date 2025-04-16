@@ -13,7 +13,6 @@ Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위
 
 ---
 
-
 ## 2️⃣ 미션 2 - 버튼을 누를 때마다 LED 토글시키기
 ```python
 from gpiozero import LED, Button
@@ -33,7 +32,9 @@ try:
     pause()
 except KeyboardInterrupt:
     print("\n프로그램을 종료합니다 :)")
-```
+    led.toggle()
+    sleep(0.5)  # 디바운싱
+
 
 
 ## 📝 개발 환경

@@ -4,7 +4,11 @@ Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위
 
 ---
 
+![alt text](<스크린샷 2025-04-16 122724.png>)
+---
+
 ## ✅ 회로 구성
+![alt text](image.png)
 - 버튼: GPIO 25번 핀에 연결 (풀업 설정)
 - LED: GPIO 8, 7, 16, 20번에 연결
 - 저항(R)을 이용한 풀업 회로 구성
@@ -29,6 +33,7 @@ def led_off():
 button.when_pressed = led_on
 button.when_released = led_off
 
+
 try:
     pause()
 except KeyboardInterrupt:
@@ -50,6 +55,7 @@ gpiozero 라이브러리
 각 미션마다 pull_up=True 설정을 통해 풀업 저항 회로를 구현했습니다.
 
 버튼 중복 입력 방지를 위해 sleep()을 이용한 디바운싱 처리 포함.
+
 
 
 ## 시연영상

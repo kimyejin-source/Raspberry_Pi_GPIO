@@ -1,4 +1,3 @@
-
 # 🎯 버튼 스위치 활용하기
 
 Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위치 입력에 따라 다양한 LED 동작을 제어하는 실습입니다.
@@ -16,6 +15,7 @@ Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위
 
 
 ## 4️⃣ 미션 4 - 버튼을 누를 때마다 4-bit 카운터 값 증가시키기
+
 ```python
 from gpiozero import LED, Button
 from time import sleep
@@ -51,7 +51,6 @@ while True:
 
         sleep(0.2)  # 다음 입력까지 약간 대기
 ```
-
 
 ## 📝 개발 환경
 Raspberry Pi 5

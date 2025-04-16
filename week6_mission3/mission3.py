@@ -15,10 +15,11 @@ def on_button_pressed():
         sleep(1)
         led.off()
 
-# 버튼이 눌렸을 때 domino4 실행행
+# 버튼이 눌렸을 때 domino4 실행
 button.when_pressed = on_button_pressed
 
 try:
     pause()
 except KeyboardInterrupt:
     print("\n프로그램을 종료합니다 :)")
+

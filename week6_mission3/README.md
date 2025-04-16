@@ -15,6 +15,7 @@ Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위
 
 
 ## 미션 3 - 버튼을 누르면 domino4 1회 실행하기
+
 ```python
 from gpiozero import LED, Button
 from time import sleep
@@ -28,6 +29,13 @@ leds = [LED(pin) for pin in led_pins]
 button = Button(25, pull_up=True)
 
 def on_button_pressed():
+=======
+led_pins = [8, 7, 16, 20]
+leds = [LED(pin) for pin in led_pins]
+
+button = Button(25, pull_up=True)
+
+def domino4():
     for led in leds:
         led.on()
         sleep(1)
