@@ -2,11 +2,10 @@
 
 Raspberry Pi와 Python(`gpiozero` 라이브러리)를 활용하여 버튼 스위치 입력에 따라 다양한 LED 동작을 제어하는 실습입니다.
 
-![alt text](<스크린샷 2025-04-16 122724.png>)
 ---
 
 ## ✅ 회로 구성
-![alt text](image.png)
+![회로 사진](../figure/KakaoTalk_20250416_124039855.jpg)
 - 버튼: GPIO 25번 핀에 연결 (풀업 설정)
 - LED: GPIO 8, 7, 16, 20번에 연결
 - 저항(R)을 이용한 풀업 회로 구성
@@ -34,8 +33,7 @@ except KeyboardInterrupt:
     print("\n프로그램을 종료합니다 :)")
     led.toggle()
     sleep(0.5)  # 디바운싱
-
-
+```
 
 ## 📝 개발 환경
 Raspberry Pi 5
